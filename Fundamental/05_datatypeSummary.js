@@ -34,8 +34,8 @@ let dataInBigInt = 2387785249747n
 let dataInSymbol = Symbol("99")
 let anotherDataInSymbol = Symbol("99")
 
-console.log( dataInSymbol === anotherDataInSymbol);
-console.log( dataInSymbol == anotherDataInSymbol);
+//console.log( dataInSymbol === anotherDataInSymbol);
+//console.log( dataInSymbol == anotherDataInSymbol);
 
 // t-i-q: symbol means unique. nothing matter is that type and value are same in two variable
 
@@ -60,10 +60,40 @@ let dataInObject = {
 let a = 8
 
 let myFunction = function dataInFunc(Abdullah) {
-    console.log(a)
+    //console.log(a)
 }
 
 
 // i-q: all primitive data is a object type but function is a object function type
 
-console.log(typeof myFunction);
+//console.log(typeof myFunction);
+
+
+// ____________________________________Memory_______________________________________
+
+
+// note: stack memory and heap memory
+
+// note: All primitive type count on stack memory and all reference data count on heap memory
+
+let score = 99
+
+let newScore = score
+
+newScore = 101
+
+// console.log(score);
+// console.log(newScore);
+
+let value = [ 6, 8, 10]
+
+let newValue = value
+
+newValue[2] = 15
+
+// console.log(value);
+// console.log(newValue);
+
+// i-q: in stack memory-- if we assign a existing value in variable, then provided a copy of this existing value not this value
+
+//t-i-q: in heap memory-- if we assign a existing value in variable, then provided a reference of this existing value not copy. because this reason if we have change in new value it makes change previous value
