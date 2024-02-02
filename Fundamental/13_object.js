@@ -23,6 +23,45 @@ const myObj = {
 
 }
 
+// note: for in loop for object 
+
+for ( key in myObj){
+    console.log(key)
+
+    console.log(myObj[key]);
+}
+
+// note for of loop for a array element of object
+
+const arrays = Object.keys(myObj)
+
+console.log(arrays);
+
+for ( value of arrays){
+    console.log(value, ":", myObj[value]);
+}
+
+
+delete myObj[mySym2]
+
+// note: for delete a element of object
+
+// console.log(myObj);
+
+const devAge = "age"
+
+myObj[devAge] = 19
+
+// note: set Object value by using another variable
+
+// console.log(myObj);
+
+
+// console.log(myObj[devAge]);
+
+// note: get Object value by using another variable
+
+
 // console.log(myObj[mySym] === myObj[mySym2]);
 
 // note: go terminal and see deference
@@ -132,7 +171,6 @@ let assignObjects = {...objOne, ...objTwo, ...objThree}
 // console.log(assignObjects.hasOwnProperty("1"));
 
 // note: .hasOwnProperty() check existence of property
-
 
 // basic structure of JASON
 

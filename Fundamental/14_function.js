@@ -60,7 +60,7 @@ function calculatePrices(...price){
 return price
 }
 
-// console.log(calculatePrices(500, 300, 100));d
+// console.log(calculatePrices(500, 300, 100));
 
 
 let customer = {

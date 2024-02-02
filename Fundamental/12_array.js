@@ -52,7 +52,7 @@ myArray.shift()
 // note: .shift() remove element on the first index of array 
 
 
-// console.log(myArray.includes("rahim"));
+// console.log(myArray.includes("robin"));
 
 // note: .include() method check, is a value have given array. and provide result in true or false. and change type on boolean
 
@@ -134,6 +134,42 @@ let score1 = 100
 let score2 = 300
 let score3 = 500
 
-console.log(Array.of( score1, score2, score3))
+// console.log(Array.of( score1, score2, score3))
 
 //note: Returns a new array from a set of elements.
+
+
+// Reverse of array
+
+let mainArray = [1, 2, 3, 4, 5]
+
+//  mainArray.reverse()
+
+//  note: simple way to reverse array using .reverse() method
+
+//  console.log(mainArray);
+
+
+let loopReversed = []
+
+for( let i = 0; i < mainArray.length; i++){
+
+    // console.log(i);
+
+    loopReversed.unshift(mainArray[i])
+}
+
+// console.log(loopReversed);
+
+// note: another way to reverse using .unshift() method
+
+
+let reversedLoop = []
+
+for ( i = mainArray.length-1; i >= 0; i--){
+    reversedLoop.push(mainArray[i])
+}
+
+console.log(reversedLoop);
+
+// note: another way to reverse using reversed loop and .push() method

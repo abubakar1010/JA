@@ -92,7 +92,7 @@ let newPart = sentence.split(" ")
 
 let pars = sentence.split("a")
 
-// note: divide according to a
+// note: Split a string into substrings using the specified separator and return them as an array.
 
 // console.log(pars);
 
