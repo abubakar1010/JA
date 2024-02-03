@@ -48,7 +48,7 @@ function average (arrOfMarks){
     total = total / arrOfMarks.length
 
     if(!Number.isInteger(total)){
-        return Math.round(total * 100) / 100
+        total = Math.round(total * 100) / 100
     }
     
     return total
