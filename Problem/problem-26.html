@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create element by dom</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    
+    <div id="preCreatDiv">
+        <h1>Existing div</h1>
+    </div>
+
+    <script>
+        const button = document.createElement("button")
+
+        button.id = "main"
+
+        button.classNAme = "newDiv"
+
+        button.style.backgroundColor = "  #10B981 "
+
+        button.style.color = " #FFFFFF "
+
+        button.style.fontSize = " 25px "
+
+        button.style.padding = " 25px 59px"
+        button.style.borderRadius = "12px"
+
+        button.style.cursor = "pointer"
+
+        button.style.textAlign = "center"
+        const text = button.innerText = "Click Me"
+
+
+        document.body.appendChild(button)
+
+        console.log(button);
+
+    </script>
+</body>
+</html>
