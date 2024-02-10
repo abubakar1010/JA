@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More About DOM</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <div class="container">
+        <h1 class="section-title" id="main">Abu Bakar</h1>
+    
+        <p class="section-description" id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, hic.</p>
+    </div>
+
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+    </ul>
+
+    <script>
+        let changeContainer = document.getElementsByClassName("container")
+
+        console.log(changeContainer);
+        changeContainer.style.color = "red"
+    </script>
+</body>
+</html>

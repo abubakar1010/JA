@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+nav {
+    background-color: rgb(148, 188, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px;
+    min-height: 90px;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+nav ul li, .home{
+    color: white;
+    background: rgba(128, 0, 128, 0.567);
+    padding: 20px 40px;
+    border-radius: 12px;
+}
