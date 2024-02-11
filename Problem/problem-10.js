@@ -3,7 +3,7 @@
 function inputArray( values){
     let numberOfElement= 0
     let total = 0
-    for( value of values){
+    for( let value of values){
         if( value % 2 !== 0){
             
             numberOfElement++

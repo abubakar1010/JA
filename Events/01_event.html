@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events On JavaScript</title>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="parent">
+        <li><img src="https://images.pexels.com/photos/2291592/pexels-photo-2291592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="dates"></li>
+        <li><img src="https://images.pexels.com/photos/5946720/pexels-photo-5946720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="milk"></li>
+        <li><img src="https://images.pexels.com/photos/3264722/pexels-photo-3264722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="camel"></li>
+        <li><img src="https://images.pexels.com/photos/19454996/pexels-photo-19454996/free-photo-of-cars-parked-in-the-shadow-of-a-rock-in-the-desert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="desert"></li>
+    </ul>
+
+    <a href="https://www.google.com" target="_blank" id="google">Google</a>
+
+    <script>
+
+        // not a good approach to use click event
+
+        document.getElementById('camel').onclick = function(){
+            // alert ('camel click')
+        }
+
+        //best approach to use js click event
+
+        document.getElementById('dates').addEventListener('click', function(){
+            // alert('dates on clicked')
+        })
+
+        //some reading material
+
+        document.getElementById('milk').addEventListener( 'click', function(e){
+        // console.log(e);
+        })
+        // type, timeStamp, defaultPrevented, target, toElement, srcElement, currentTarget
+
+        // i-q: client related question, clientX, clientY, ScreenX, ScreenY, altKey, CtrlKey, ShiftKey, keyCode
+
+        document.getElementById('milk').addEventListener('click', function(e){
+            // console.log("clicked on li under the ul");
+
+            // e.stopPropagation()
+        },false)
+
+
+        //t-i-q:default third parameter is false. it's mean propagates bubble event(bottom to top approach).And the value is true then propagate capturing event(top to bottom approach) 
+        document.getElementById('parent').addEventListener('click', function(e){
+            // console.log("clicked on ul");
+
+            // e.stopPropagation()
+        },false)
+
+
+        //t-i-q:default third parameter is false. it's mean propagates bubble event(bottom to top approach).And the value is true then propagate capturing event(top to bottom approach)
+
+
+
+        document.getElementById('google').addEventListener('click', function(e){
+
+            // console.log("clicked google");
+            // e.preventDefault()
+
+        })
+
+        // note: remove method 
+
+        document.getElementById('parent').addEventListener('click', function(e){
+            const removeIt = e.target.parentNode
+
+            removeIt.remove()
+
+            // removeIt.parentNode.removeChild(removeIt)
+        }, false)
+
+
+
+    </script>
+</body>
+</html>

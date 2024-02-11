@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Event - oneclick</title>
+</head>
+<body>
+    <!-- //use case --- undefined -->
+
+    <button id="food" style="background-color: purple; border: none; color: white; padding: 10px 28px; border-radius: 12px;" onclick="console.log('dates'), document.getElementById('food').innerText='Dates'">get your favorite food</button>
+
+    <!-- //use case --- undefined -->
+
+    <button id="drink" style="background-color: gray; border: none; color: white; padding: 10px 28px; border-radius: 12px;" onclick="console.log('milk'),document.getElementById('drink').innerText='Milk'">get your favorite drink</button>
+
+    <!-- //use case --- undefined -->
+
+    <button id="clickRed" style="background-color: red; border: none; color: white; padding: 10px 28px; border-radius: 12px;" onclick="makeRed()">Make Red</button>
+    
+    <section>
+        <button onclick="document.body.style.backgroundColor ='darkcyan'"  style="background-color: darkcyan; border: none; margin-top: 20px; color: white; padding: 10px 28px; border-radius: 12px;">Make Darkcyan</button>
+        <button id="darkorange" style="background-color: darkorange; border: none; margin: 20px; color: white; padding: 10px 28px; border-radius: 12px;">Make Darkorange</button>
+        <button id="goldenrod" style="background-color: goldenrod; border: none; margin: 20px; color: white; padding: 10px 28px; border-radius: 12px;">Make goldenrod</button>
+    </section>
+
+    <section>
+
+        <h1 id = text>JavaScript Events
+        </h1>
+
+        <button id="readMore" onclick="read()" style="background-color: darkorange; border: none; color: white; padding: 10px 28px; border-radius: 12px;">Read More</button>
+
+    </section>
+
+    <section>
+        <h1>we are  <span id="getProperty"></span></h1>
+        <input type="text" name="" id="textField" placeholder="Don't type Your property might be stolen" style="padding: 20px; outline: 0; width: 400px; border-color: red; border-radius: 12px;">
+        <button id="submit-btn" style="background-color: darkcyan; border: none; margin: 20px; color: white; padding: 10px 28px; border-radius: 12px;">Don't Submit</button>
+    </section>
+
+    <section id="commentContainer">
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis tenetur accusamus mollitia atque cupiditate quae doloremque quisquam rerum obcaecati modi laudantium natus debitis aperiam aliquid odio, reprehenderit repellat amet libero. A ullam consequatur exercitationem et reiciendis doloribus culpa facilis voluptas officia incidunt quod quae tempora, repudiandae nobis? Perspiciatis, voluptas corrupti!</p>
+        <p>Sit a quam autem totam blanditiis. Officiis, sunt repellat consequatur quod aspernatur facilis earum a, voluptatum incidunt ratione officia aliquid laboriosam delectus cupiditate iure dolor in est harum. Cupiditate, unde neque! Iure alias omnis velit? Voluptatibus corrupti suscipit non ullam obcaecati, eum nesciunt, perferendis cumque amet deserunt, facilis quidem quod?</p>
+        <p>Explicabo impedit, quam repellat beatae provident sapiente perferendis voluptatem maxime autem rerum doloribus aliquam. Sapiente iure accusamus corrupti repellendus deleniti tenetur earum explicabo dolore ut itaque veritatis praesentium nobis dignissimos quae repellat perspiciatis, expedita quisquam maxime aspernatur voluptatum? Veritatis voluptates quisquam pariatur officia ad iure praesentium sunt labore, harum earum.</p>
+        <p>Dolore, cumque? Modi, debitis repellendus similique quidem, repudiandae ad voluptatum dolorum, laudantium ipsum eius ut? Asperiores nostrum accusantium autem, officia dolores tempora ad facere voluptatum exercitationem optio. Corporis repellat, iste commodi accusantium laborum ad magni nihil totam at reiciendis error vitae omnis inventore deleniti, accusamus possimus dicta culpa esse ullam!</p>
+
+    </section>
+
+    <textarea name="" id="commentBox" cols="80" rows="7" style="padding: 30px;"></textarea>
+
+    <button id="commentBtn" style="background-color: darkorange; border: none; color: white; padding: 20px 48px; display: block; margin-top: 20px; border-radius: 12px;">Drop Your comment</button>
+
+    <section style="margin-top: 40px;">
+        <h1 id="hide">Please Follow the instraction for delete your repo</h1>
+
+        <input type="text" name="" id="delete-field">
+
+        <button id="delete-btn" disabled>DELETE</button>
+    </section>
+
+    <script>
+
+        //delete thing like github
+
+        document.getElementById('delete-field').addEventListener('keyup', function(textInfo){
+            const deleteText = document.getElementById('delete-btn')
+            const collectInfo = textInfo.target.value
+
+            if( collectInfo === "delete"){
+                deleteText.removeAttribute("disabled")
+            }
+
+            else{
+                deleteText.setAttribute('disabled', 'true')
+            }
+        })
+
+        document.getElementById('delete-btn').addEventListener('click', function(){
+
+            const hideInfo = document.getElementById('hide')
+
+            hideInfo.style.display = "none"
+
+
+
+        })
+
+        // add comment 
+
+        document.getElementById('commentBtn').addEventListener('click', () => {
+
+            const comments = document.getElementById('commentBox')
+
+            const commentVal = comments.value
+
+            comments.value = ''
+
+            const createCommentCollector = document.createElement('p');
+
+            createCommentCollector.innerText = commentVal;
+
+            const commentContainer = document.getElementById('commentContainer')
+
+            commentContainer.appendChild(createCommentCollector)
+
+
+        })
+
+            //input field 
+        document.getElementById("submit-btn").addEventListener('click', function(){
+            const inputValue = document.getElementById('textField').value
+
+            document.getElementById('getProperty').innerText = inputValue;
+
+            document.getElementById('textField').value = ''
+        })
+
+        function read(){
+            document.getElementById("text").innerText ="More About JavaScript Events"
+        }
+
+        //important use case
+
+        function makeRed () {
+            document.body.style.backgroundColor = "red"
+        }
+
+        //use case -- undefined
+
+        const darkorange = document.getElementById('darkorange')
+
+        darkorange.onclick = () => {
+
+            document.body.style.backgroundColor="darkorange"
+
+        }
+
+        // most important 
+
+        document.getElementById("goldenrod").addEventListener('click', function(){
+            document.body.style.backgroundColor ="goldenrod"
+        })
+
+    </script>
+</body>
+</html>
