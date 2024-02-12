@@ -170,6 +170,33 @@ for ( i = mainArray.length-1; i >= 0; i--){
     reversedLoop.push(mainArray[i])
 }
 
-console.log(reversedLoop);
+// console.log(reversedLoop);
 
 // note: another way to reverse using reversed loop and .push() method
+
+//sorting method in array
+
+let myArr = [4, 6, 3, 9, 2, 1]
+
+myArr.sort()
+
+//note: by default sort method sorted element on Ascending order
+
+// console.log(myArr);
+
+let anotherArr = [12, 13, 45, 2, 5, 65, 88, 9]
+
+//note: if the value is getter then 9 then we need to pass parameter to sorted arr.
+
+/**
+ * the syntax is 
+ * 
+ * array.sort( (a,b) => a - b )  // Ascending order
+ * 
+ * array.sort( (a,b) => b - a )  // Descending order
+ * 
+ * 
+ */
+anotherArr.sort( (a,b) => a - b)
+
+console.log(anotherArr)
