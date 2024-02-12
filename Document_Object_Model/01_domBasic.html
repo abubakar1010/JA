@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Of Dom</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <Section id="parent">
+        <h1 id="title">Document Object Model</h1>
+        <p id="description" class="Section-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum modi ipsum deserunt veniam voluptatem inventore exercitationem, molestias, molestiae quasi eligendi nihil ducimus quidem excepturi quis voluptatum eius minima iure itaque.</p>
+
+        <h3 id="innerHTMLMethod"> this is target element text <span>this is markup in h3</span></h3>
+        <h2 class="heading">this is h2--1</h2>
+        <h2 class="heading">this is h2--2</h2>
+        <h2 class="heading">this is h2--3</h2>
+        <h2 class="heading">this is h2--4</h2>
+        <h2 class="heading">this is h2--5</h2>
+
+        <ul>
+            <li>li--1 here</li>
+            <li>li--2 here</li>
+            <li>li--3 here</li>
+            <li>li--4 here</li>
+            <li>li--5 here</li>
+        </ul>
+    </Section>
+
+    <script>
+
+        document.getElementById('title')
+
+    // note: document.getElementById('title') provide full element like                                                                                                 ----->  <h1 id="title">Document Object Model</h1>
+
+        // console.log(document.getElementById('title'));
+
+        document.getElementById('innerHTMLMethod').innerHTML
+
+        // console.log(document.getElementById('innerHTMLMethod').innerHTML);
+
+        // note: .innerHTML provide all thing with text and markup like 
+
+        //  i-q: ----->   this is target element text <span>this is markup in h3</span>
+
+
+        document.getElementById('description').id
+
+        // console.log(document.getElementById('description').id);
+
+        // note: .id method provide the value of id 
+
+        document.getElementById('description').className
+
+        // console.log(document.getElementById('description').className);
+
+        // note: .className method provide the value of class 
+
+        document.getElementById('description').getAttribute('id')
+
+        // console.log(document.getElementById('description').getAttribute('id'))
+
+        // note: .getAttribute("pass value of key") method provide the value of attribute that we pass in the parameter
+
+        document.getElementById('description').setAttribute( 'section-desc', 'desc')
+
+        // console.log(document.getElementById('description').setAttribute( 'section-desc', 'desc'))
+
+        // note: .setAttribute ( 'key of attribute', 'value of attribute') method always overwrite the value 
+
+        let styleUsingJs = document.getElementById('title');
+
+        styleUsingJs.style.backgroundColor = "darkorange"
+
+        // note: syntax of using style -------> variable/select your target.style.styleProperty = "property's value"
+
+        document.getElementById('innerHTMLMethod').innerText
+
+        // console.log(document.getElementById('parent').innerText);
+        // console.log(document.getElementById('innerHTMLMethod').innerText);
+        // console.log(document.getElementById('description').innerText);
+
+        //note: .innerText method provide all text that into targeted element but don't provide hidden element
+
+        document.getElementById('innerHTMLMethod').textContent
+
+        // console.log(document.getElementById('innerHTMLMethod').textContent);
+        // console.log(document.getElementById('description').textContent);
+
+        //note: .textContent method provide all text that into targeted element and also provide the hidden element
+
+        document.querySelector("h2")
+
+        // console.log(document.querySelector("h2"));
+
+        // note: .querySelector("tagname"/".classname"/"#idname" etc) method provide the entire first element. like if the markup have 33 h2 this method provide the first h2
+
+        let myUl = document.querySelector("ul")
+
+        myUl.style.border = "2px solid green"
+        myUl.style.padding = '50px'
+
+        let myLi = myUl.querySelector('li')
+
+        myLi.style.color = 'darkcyan'
+        myLi.style.margin = '10px'
+        myLi.style.fontSize = '30px'
+
+        const myH2 = document.querySelector('h2')
+
+        myH2.style.backgroundColor = 'darkred'
+        myH2.style.padding = '66px'
+        myH2.style.textAlign = 'center'
+        myH2.style.borderRadius = '12px'
+        myH2.style.margin = '120px'
+
+
+        document.querySelectorAll("li")
+
+        // console.log(document.querySelectorAll("li"))
+
+        // note: .querySelectorAll("selector") method provide all li of markup and provide this in a nodeList
+
+        // t-i-q: nodeList is a array like object. it's have index, length, key, value, forEach loop but not have all array method. so if we change a particular element we must need to index of this element for access. like -----> myLi[3].style....
+
+
+        document.getElementsByClassName('heading')
+
+        console.log(document.getElementsByClassName('heading'));
+
+        // note: .getElementsByClassName("selector") method provide all li of markup and provide this in a HTMLCollection
+
+        // t-i-q: HTMLCollection is a array like object. it's have index, length, key, value but do not have forEach loop and almost every array method. so if we change a particular element we must need to index of this element for access. like -----> myLi[3].style....
+    </script>
+</body>
+</html>
