@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Element Using DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+    <div class="parent">
+        <div class="day">Tuesday</div>
+        <div class="day">Monday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        let parent = document.querySelector('.parent')
+        // console.log(parent)
+        // console.log(parent.children[1].innerHTML)
+
+        for (let i = 0; i < parent.children.length; i++) {
+            const element = parent.children[i].innerHTML;
+
+            // console.log(element);
+            
+        }
+        
+        parent.children[3].style.color = "darkorange"
+        
+        // console.log("nodes: -->", parent.childNodes);
+        // console.log(parent.firstElementChild);
+        // console.log(parent.lastElementChild);
+        // console.log(parent.firstElementChild.parentNode);
+        // console.log(parent.parentElement);
+        // console.log(parent.firstElementChild.nextElementSibling);
+
+
+        let heading = document.createElement('h1')
+
+        // note: .createElement('pass value') create a new element but not show on the web page
+
+
+
+        heading.style.color = "hotpink"
+        heading.style.backgroundColor = "darkgray"
+        heading.style.padding = "22px"
+        heading.style.margin = "22px"
+
+                // heading.innerHTML = "Create New heading using dom"
+
+        let addText = document.createTextNode("Create New heading using dom")
+
+        heading.appendChild(addText)
+
+        document.body.appendChild(heading)
+        
+
+
+    </script>
+</body>
+</html>
