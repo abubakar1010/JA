@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Theory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
+</head>
+<body class="container mx-auto">
+    <h1 id="heading">Get Ready To Create Something Extraordinary</h1>
+    <button type="button" id="btn" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-12">Green</button>
+    <button id="btn2" class=" px-5 py-2 rounded-xl bg-cyan-500">Change</button>
+
+    <script>
+        // setTimeout( function(){
+        //     document.querySelector("#btn").style.backgroundColor = "red"
+        //     console.log("ko");
+        // },2000)
+
+        setTimeout(() => {
+            const button = document.getElementById("btn")
+            button.innerText = "Orange"
+            button.style.backgroundColor = "red"
+
+             const btn2 = document.getElementById("btn2")
+
+             btn2.style.backgroundColor = "orange"
+            
+
+            const h = document.getElementById("heading")
+
+            h.innerText = "Change Text"
+            h.style.padding = "12px"
+            h.style.margin = "30px"
+            h.style.backgroundColor = "red"
+            h.classList.add("rounded-xl")
+        }, 1000);
+
+        const createElement = function (){
+
+            div = document.createElement("div")
+
+            div.innerHTML = ` <p class = " text-xl font-bold text-center py-4 rounded-lg w-[300px] mx-auto bg-cyan-200 text-pink800"> This is a new Element </p>`
+
+            document.body.appendChild(div)
+
+        }
+
+        const changeMe = setTimeout( createElement, 2000)
+
+        document.querySelector("#btn2").addEventListener('click',function(){
+
+            clearTimeout(changeMe)
+
+            console.log("stope");
+
+        })
+
+    </script>
+    
+</body>
+</html>
