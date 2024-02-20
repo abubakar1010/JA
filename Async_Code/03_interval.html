@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <div>
+        <h1>Asynchronous Processing</h1>
+    </div>
+    
+
+    <button id="start" style="background-color: hotpink; color: white; padding: 9px 38px; border-radius: 12px; border: 0; font-size: 24px;  margin: 30px;">Start</button>
+    <button id="stop" style="background-color: green; color: white; padding: 9px 38px; border-radius: 12px; border: 0; font-size: 24px;  margin: 30px;">Stop</button>
+    <section  id="parent"></section>
+
+    <script>
+
+        function random () {
+
+            let num = Math.floor((Math.random() * 100))
+
+            return num
+
+        }
+
+        
+        const printMore = () => {
+
+            const p = document.createElement("p")
+
+            p.innerHTML = `this is a random number <span>${random()}<span>`
+
+                document.getElementById("parent").appendChild(p)
+
+        }
+
+        let addElement;
+
+        document.getElementById("start").addEventListener('click', function(){
+
+            addElement = setInterval( printMore, 50,)
+            console.log("start");
+        })
+
+        document.getElementById("stop").addEventListener('click', function(){
+
+                clearInterval(addElement)
+                console.log("stop");
+        })
+    </script>
+</body>
+</html>
