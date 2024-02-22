@@ -6,8 +6,6 @@ let arr = [ 4, 5, 3, 2]
 
 let [ a, b, c, d] = arr
 
-// console.log(c);
-
 let myobj = {
 
     name: "osman",
@@ -15,14 +13,20 @@ let myobj = {
 
 }
 
-console.log(myobj);
+// console.log(myobj);
 
 // it's call object destructuring, the property name refer the property value of main obj
 
 let { name , age } = myobj
 
-console.log(age);
+// console.log(age);
 
 let { name: nam, age: boyos} = myobj
 
-console.log(nam);
+// console.log(nam);
+
+let fn = ( a, b) => [ a*4, b * 4]
+
+let [v, e] = fn(2,4)
+
+// console.log(e);
