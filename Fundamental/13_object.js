@@ -193,7 +193,7 @@ let assignObjects = {...objOne, ...objTwo, ...objThree}
 
 // note: getter (get) and setter (set) in Object
 
-const Person ={
+const newPerson ={
 
     
     name: "omar",
@@ -208,7 +208,7 @@ const Person ={
 
 // note: javaScript getter syntax 
 
-// console.log(Person.concat);
+// console.log(newPerson.concat);
 
 
 const anotherPerson ={
@@ -229,3 +229,20 @@ anotherPerson.work = "omar"
 console.log(anotherPerson);
 
 // this is simple syntax of setter 
+
+
+//note: JavaScript Constructor Function 
+
+function Person( name, age, eye ){
+
+    this.name = name
+    this.age = age
+    this.eyeColor= eye
+    this.details = function(){
+        return `${name} is a technically sound person.`
+    }
+}
+
+const Omar = new Person("omar", 19, "black")
+
+console.log(Omar.details());
