@@ -189,3 +189,43 @@ let assignObjects = {...objOne, ...objTwo, ...objThree}
 
 //     }
 // ]
+
+
+// note: getter (get) and setter (set) in Object
+
+const Person ={
+
+    
+    name: "omar",
+    age: 19,
+
+    get concat(){
+
+        return `his name ${this.name} and his age ${this.age}`
+    }
+
+}
+
+// note: javaScript getter syntax 
+
+// console.log(Person.concat);
+
+
+const anotherPerson ={
+
+    
+    name: "osman",
+    age: 19,
+
+    set work(param){
+
+        this.name = param
+    }
+
+}
+
+anotherPerson.work = "omar"
+
+console.log(anotherPerson);
+
+// this is simple syntax of setter 
