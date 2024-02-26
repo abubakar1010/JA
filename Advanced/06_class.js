@@ -2,7 +2,7 @@
 /* ##############################################################
 
 
-class Car {
+class ClassNameInPascalCase {
 
     constructor(){}
 
@@ -77,6 +77,33 @@ class Laptop extends OurProducts {
 }
 
 
-
+const mac = new Laptop("UAE", "Dubai", "Unlimited", "MackBook Air", 2023, "Omar")
 
 console.log(mac);
+mac.quality(this.name)
+
+
+class Apple{
+
+    constructor(name,author, color){
+
+        this.name = name;
+        this.author = author;
+        this.color = color
+    }
+
+    isRun(){
+
+        console.log(this.name + 'is on fire');
+    }
+}
+
+const MackBook = new Apple("MacBook Air Pro", "Osman", "BlackGray");
+
+console.log(MackBook);
+
+MackBook.name = "MackBook Light"
+
+console.log(MackBook);
+
+MackBook.isRun()
