@@ -74,7 +74,7 @@ promiseFour
     }, 1000);
   })
 
-  async function asyncPromise(user){
+  async function asyncPromise(){
 
     try {
         const response = await promiseFive
